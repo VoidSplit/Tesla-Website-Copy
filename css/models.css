@@ -5,7 +5,7 @@ html {
 }
 .tchatbox {
     position: absolute;
-    z-index: 8;
+    z-index: 3;
 }
 .tchatbox .bubble-pop-up {
     border: none;
@@ -122,7 +122,6 @@ html {
     left: 0;
     width: 100vw;
     height: 250px;
-    z-index: 8;
 }
 #interior .video-wrapper {
     width: 100%;
@@ -343,17 +342,49 @@ html {
 #technology .inner .top p {
     font-family: "Gotham-Light"; 
 }
+#technology .inner .img-wrapper {
+    position: relative;
+    width: 100%;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    height: 510px;
+}
+#technology .inner .img-wrapper img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: opacity .5s;
+    
+}
+#technology .inner .img-wrapper img.inactive {
+    opacity: 0;
+}
 #technology .inner .table-wrapper {
     display: flex;
     width: 800px;
     margin: 30px auto;
-    gap: 20px;
+    justify-content: space-between;
     position: relative;
 }
 #technology .inner .table-wrapper .table {
-    border-top: 3px solid rgb(57,60,65);
-    padding: 15px 17px 17px;
+    border-top: 3px solid rgb(113, 115, 119);
+    padding: 15px ;
+    transition: border .2s;
+    max-width: 385px;
 }
+#technology .inner .table-wrapper .table * {
+    transition: color .2s
+}
+#technology .inner .table-wrapper .table:hover {
+    border-top: 3px solid rgb(0, 0, 0);
+} 
+#technology .inner .table-wrapper .table:not(:hover,.active) * {
+    color: rgb(113, 115, 119);
+}
+#technology .inner .table-wrapper .table.active {
+    border-top: 3px solid rgb(0, 0, 0);
+} 
 #technology .inner .table-wrapper .table > h1 {
     margin-bottom: 20px;
     font-family: "Gotham-Light";
@@ -374,18 +405,23 @@ html {
     flex-direction: column;
 }
 #technology .inner .table-wrapper .table .stats .box h1 {
-    color: #000;
     font-family: "Gotham-Light"; 
     font-size: 24px;
 }
 #technology .inner .table-wrapper .table .stats .box span {
-    color: #000;
     font-family: "Gotham-Light"; 
     font-size: 12px;
 }
 #technology .inner .table-wrapper .cursor-box {
     height: calc(100%);
     width: calc((50%) - 15px);
-    border: 3px solid rgb(34, 34, 34);
+    border: 3px solid #000000;
     position: absolute;
+    transition: transform .3s ease;
+}
+#technology .inner .table-wrapper .cursor-box:not(.right) {
+    transform: translateX(0);
+}
+#technology .inner .table-wrapper .cursor-box.right {
+    transform: translateX(calc(800px - 100%));
 }
