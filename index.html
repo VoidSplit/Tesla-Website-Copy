@@ -8,10 +8,11 @@
         <link rel="shortcut icon" href="https://www.tesla.com/themes/custom/tesla_frontend/assets/favicons/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="css/style.css">
         <script src="js/app.js" defer></script>
+        <script src="js/menu.js" defer></script>
     </head>
     <body>
         <main>
-            <nav>
+            <nav class="fixed">
                 <div class="logo">
                     <a href="#" aria-label="Tesla Logo">
                         <svg viewBox="0 0 342 35" xmlns="http://www.w3.org/2000/svg"><path d="M0 .1a9.7 9.7 0 007 7h11l.5.1v27.6h6.8V7.3L26 7h11a9.8 9.8 0 007-7H0zm238.6 0h-6.8v34.8H263a9.7 9.7 0 006-6.8h-30.3V0zm-52.3 6.8c3.6-1 6.6-3.8 7.4-6.9l-38.1.1v20.6h31.1v7.2h-24.4a13.6 13.6 0 00-8.7 7h39.9v-21h-31.2v-7h24zm116.2 28h6.7v-14h24.6v14h6.7v-21h-38zM85.3 7h26a9.6 9.6 0 007.1-7H78.3a9.6 9.6 0 007 7zm0 13.8h26a9.6 9.6 0 007.1-7H78.3a9.6 9.6 0 007 7zm0 14.1h26a9.6 9.6 0 007.1-7H78.3a9.6 9.6 0 007 7zM308.5 7h26a9.6 9.6 0 007-7h-40a9.6 9.6 0 007 7z" fill="currentColor"></path></svg>
@@ -19,7 +20,7 @@
                     </a>
                 </div>
                 <div class="categories mn-lk-wr">
-                    <a href="#">Model S</a>
+                    <a href="pages/models/model-s.html">Model S</a>
                     <a href="#">Model 3</a>
                     <a href="#">Model X</a>
                     <a href="#">Model Y</a>
@@ -33,37 +34,6 @@
                     <a id="menuButton" href="#">Menu</a>
                 </div>
             </nav>
-            <section id="wrapper" class="presentation-wrapper">
-                <div class="text-labels">
-                    <div class="screen">
-                        <div id="title">Model Y</div>
-                        <div id="subtitle"></div>
-                        <div id="buttons"></div>
-                        <div id="sublink"></div>
-                        <a href="#presentation-model-3" aria-label="Descendre plus bas dans le site">
-                            <div id="caret" class="caret"></div>
-                            <span class="transparent">Descendre plus bas dans le site</span>
-                        </a>
-                        
-                    </div>
-                </div>
-
-                <div class="presentation-section" id="presentation-model-y"></div>
-                <div class="presentation-section" id="presentation-model-3"></div>
-                <div class="presentation-section" id="presentation-model-s"></div>
-                <div class="presentation-section" id="presentation-model-x"></div>
-                <div class="presentation-section" id="presentation-powerwalls"></div>
-                <div class="presentation-section" id="presentation-accessories"></div>
-                
-                <footer>
-                    <a href="#">Tesla © 2022</a>
-                    <a href="#">Mentions légales</a>
-                    <a href="#">Contact</a>
-                    <a href="#">Carrières</a>
-                    <a href="#">Actualités</a>
-                    <a href="#">Localisations</a>
-                </footer>
-            </section>
             <div id="menu" class="closed">
                 <nav>
                     <div class="top">
@@ -98,6 +68,37 @@
                 </nav>
                 <div id="detector"></div>
             </div>
+            <section id="wrapper" class="presentation-wrapper">
+                <div class="text-labels">
+                    <div class="screen">
+                        <div id="title">Model Y</div>
+                        <div id="subtitle"></div>
+                        <div id="buttons"></div>
+                        <div id="sublink"></div>
+                        <a href="#presentation-model-3" aria-label="Descendre plus bas dans le site">
+                            <div id="caret" class="caret"></div>
+                            <span class="transparent">Descendre plus bas dans le site</span>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                <div class="presentation-section" id="presentation-model-y"></div>
+                <div class="presentation-section" id="presentation-model-3"></div>
+                <div class="presentation-section" id="presentation-model-s"></div>
+                <div class="presentation-section" id="presentation-model-x"></div>
+                <div class="presentation-section" id="presentation-powerwalls"></div>
+                <div class="presentation-section" id="presentation-accessories"></div>
+                
+                <footer>
+                    <a href="#">Tesla © 2022</a>
+                    <a href="#">Mentions légales</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Carrières</a>
+                    <a href="#">Actualités</a>
+                    <a href="#">Localisations</a>
+                </footer>
+            </section>
         </main>
     </body>
 </html>

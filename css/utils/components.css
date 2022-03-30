@@ -1,0 +1,250 @@
+@import url("fonts.css");
+@import url("keyframes.css");
+html {
+    scroll-behavior: smooth;
+    overflow: hidden;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Gotham-Medium;
+}
+.d-none {
+    display: none;
+}
+/*Navbar*/
+
+nav.fixed {
+    position: fixed;
+}
+nav {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    height: 54px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 0px 33px 0 0;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+nav .logo {
+    height: 100%;
+    margin: 1px 70px 1px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+nav .logo svg {
+    width: 120px;
+    color: rgb(23, 26, 32);
+}
+nav .logo span {
+    display: none;
+}
+nav .mn-lk-wr a {
+    margin: 0 0.7px;
+    letter-spacing: normal;
+    line-height: 21px;
+    color: rgb(23, 26, 32);
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 13px;
+    transition: background-color 0.5s ease;
+}
+nav .mn-lk-wr a:hover {
+    background-color: hsla(0,0%,0%,.05);
+}
+nav .mn-lk-wr {
+    gap: 0;
+    display: flex;
+    flex-direction: row;
+}
+#menu.closed {
+    transform: translateX(100%);
+    transition: transform .2s ease-in-out .5s;
+}
+#menu.closed #detector {
+    opacity: 0;
+}
+#menu.closed nav {
+    transform: translateX(100%);
+}
+#menu {
+    overflow: hidden;
+    z-index: 5;
+    display: flex;
+    flex-direction: row-reverse;
+    top: 0;
+    left: 0;
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    transition: transform 0s ease-in-out 0s;
+}
+#menu #detector {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.302);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    transition: opacity .5s ease-in-out;
+}
+#menu nav {
+    position: absolute;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    width: 311px;
+    height: 100%;
+    box-shadow: 0 -8px 16px 0 rgb(0 0 0 / 16%);
+    transition: transform .5s ease-in-out;
+    transform: translateX(0%);
+}
+#menu nav .top {
+    padding: 20px;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+#menu nav .top svg {
+    cursor: pointer;
+    position: relative;
+    height: 100%;
+    padding: 8px;
+    color: #393c41;
+    border-radius: 50%;
+    transition: background-color .3s ease-in-out;
+}
+#menu nav .top svg:hover {
+    background-color: #F2F2F2;
+}
+#menu nav .list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 11px;
+    height: 100%;
+    width: 100%;
+    padding: 10px 36px 48px
+}
+#menu nav .list a {
+    position: relative;
+    width: 100%;
+    color: #393c41;
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 15px;
+    padding: 4px 8px;
+    line-height: 21px;
+}
+#menu nav .list a::before {
+    content: '';
+    position: absolute;
+    left: -5%;
+    top: -20%;
+    background-color: #fff;
+    width: 110%;
+    height: 140%;
+    z-index: -1;
+    border-radius: 12px;
+    transition: all .2s;
+}
+#menu nav .list a:hover::before {
+    background-color: #F2F2F2;
+}
+#menu nav .list .country::before {
+    content: '';
+    position: absolute;
+    left: -5%;
+    top: -20%;
+    background-color: #fff;
+    width: 110%;
+    height: 140%;
+    z-index: -1;
+    border-radius: 12px;
+    transition: all .2s;
+}
+#menu nav .list .country:hover::before {
+    background-color: #F2F2F2;
+}
+#menu nav .list .country {
+    position: relative;
+    color: #393c41;
+    display: flex;
+    padding: 4px 4px;
+    width: 100%;
+}
+#menu nav .list .country .icon {
+    width: 22px;
+}
+#menu nav .list .country .inner {
+    margin: 0 0 0 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+#menu nav .list .country .inner span {
+    color: #5c5e62;
+    font-weight: lighter;
+    font-size: 12px;
+}
+
+
+/*Smooth scroll snapping sections*/
+.wrapper {
+    height: 100vh;
+    overflow: hidden scroll;
+    display: flex;
+    flex-direction: column;
+
+}
+.btn {
+    
+    margin-top: 7px;
+    height: 30px;
+    outline: 3px solid #fff;
+    background-color: transparent;
+    border-radius: 250px;
+    padding: 17px 0;
+    color: #fff;
+    text-decoration: none;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 500;
+    transition: background-color .2s ease-in-out;
+}
+.btn span {
+    width: 150px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 4px 24px;
+}
+.btn:hover {
+    background-color: #fff;
+    color: #000;
+}
+.btn.btn--black {
+    outline-color: #000;
+    color: #000
+}
+.btn.btn--black:hover {
+    background-color: #000;
+    color: #fff;
+}
